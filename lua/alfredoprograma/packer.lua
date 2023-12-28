@@ -7,6 +7,9 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
+	-- Plenary
+	use 'nvim-lua/plenary.nvim'
+
 	-- Telescope
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
@@ -35,7 +38,11 @@ return require('packer').startup(function(use)
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
 	-- Harpoon
-	use('theprimeagen/harpoon')
+	use {
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		requires = { {"nvim-lua/plenary.nvim"} }
+	}
 
 	-- Utils plugins 
 	use 'mbbill/undotree'
